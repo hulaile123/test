@@ -1,0 +1,2 @@
+在boot the kernel处输出，在arch/arm/boot/compressed/misc.c中
+在VFS mount那输出在do_mount.c中 在psp/linux-2.6.17/init中

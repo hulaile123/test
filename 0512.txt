@@ -1,0 +1,47 @@
+dvsdk4/dm365-demos/dm365 make; make install
+在开发板跟目录，出现encode.decode.encodedecode 
+我把redhat4中encode0714考了过来，make出错；
+开发板运行./encode -v zhtest1.mpeg4显示无摄像头。（如果进入mcvip运行./modules.sh在运行encode。报错没有pool,到不了查找摄像头那步）
+与mcvip运行出错相同，目测内核加载5158失败或者摄像头失败。！
+
+root@dm365-evm:/# ./encodedecode
+Encodedecode demo started.
++++*** mgr->current_mode.name: 480P-60, if_type: 0
++++*** mgr->current_mode.name: 576P-50, if_type: 0
+davinci_resizer davinci_resizer.2: RSZ_G_CONFIG:0:1:124
+davinci_previewer davinci_previewer.2: ipipe_set_preview_config
+****** vpfe_open()**** 
+Std Set -> 0 
+vpfe_config_ccdc_image_format() : pix_fmt->1498831189 
+vpfe-capture vpfe-capture: IPIPE Chained
+vpfe-capture vpfe-capture: Resizer present
+*** vpfe_open() success!!!
+
+
+
+vpfe-capture vpfe-capture: input information not found for the subdev
+Error: Failed to create capture device
+
+
+
+root@dm365-evm:/# ./encode -v zhtest1.mpeg4
+Encode demo started.
++++*** mgr->current_mode.name: 480P-60, if_type: 0
++++*** mgr->current_mode.name: 576P-50, if_type: 0
+davinci_resizer davinci_resizer.2: RSZ_G_CONFIG:0:1:124
+davinci_previewer davinci_previewer.2: ipipe_set_preview_config
+****** vpfe_open()**** 
+Std Set -> 0 
+vpfe_config_ccdc_image_format() : pix_fmt->1498831189 
+vpfe-capture vpfe-capture: IPIPE Chained
+vpfe-capture vpfe-capture: Resizer present
+*** vpfe_open() success!!!
+
+
+
+
+vpfe-capture vpfe-capture: input information not found for the subdev
+Error: Failed to create capture device. Is video input connected?
+
+
+
